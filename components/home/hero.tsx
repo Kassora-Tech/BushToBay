@@ -16,93 +16,90 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const yContent = useTransform(scrollYProgress, [0, 1], [0, 140]);
-  const yOrbs = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const yImage = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const yContent = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section
-      ref={ref}
-      className="gradient-mesh relative flex min-h-[100svh] items-center overflow-hidden pt-28"
-    >
-      {/* Floating sunset orbs */}
+    <section ref={ref} className="relative flex min-h-[100svh] items-end overflow-hidden bg-bush-950">
+      {/* Cinematic photo layer with slow parallax + settle-in zoom */}
       <motion.div
+        style={reduced ? undefined : { y: yImage }}
         aria-hidden="true"
-        style={reduced ? undefined : { y: yOrbs }}
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0"
       >
         <motion.div
-          animate={reduced ? undefined : { y: [0, -28, 0], x: [0, 14, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -left-24 top-24 h-96 w-96 rounded-full bg-gradient-to-br from-amber-300/50 to-bush-400/40 blur-3xl dark:from-amber-400/25 dark:to-bush-500/25"
-        />
-        <motion.div
-          animate={reduced ? undefined : { y: [0, 24, 0], x: [0, -18, 0] }}
-          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -right-28 bottom-16 h-[28rem] w-[28rem] rounded-full bg-gradient-to-tl from-bush-500/35 to-amber-200/45 blur-3xl dark:from-bush-600/30 dark:to-amber-500/15"
-        />
+          initial={reduced ? false : { scale: 1.12 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/hero-bus.jpeg"
+            alt=""
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover object-[70%_center] [filter:saturate(1.08)_contrast(1.05)]"
+          />
+        </motion.div>
+        {/* Legibility gradients + cinematic vignette */}
+        <div className="absolute inset-0 bg-gradient-to-r from-bush-950/90 via-bush-950/40 to-bush-950/10" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-bush-950/95 via-bush-950/35 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bush-950/60 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_25%,transparent_55%,rgb(51_17_7/0.5)_100%)]" />
       </motion.div>
 
       <motion.div
         style={reduced ? undefined : { y: yContent, opacity }}
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-5 pb-24 text-center"
+        className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24 pt-40"
       >
-        {/* The client's original brand lockup, front and centre */}
-        <motion.div
-          initial={reduced ? false : { opacity: 0, scale: 0.9, filter: "blur(12px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+        <motion.p
+          initial={reduced ? false : { opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-sand-100 backdrop-blur-md"
         >
-          <motion.div
-            animate={reduced ? undefined : { y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <Image
-              src="/images/logo-hero.png"
-              alt="Bush to Bay — Travel and Tours"
-              width={1600}
-              height={617}
-              priority
-              className="h-auto w-72 drop-shadow-xl sm:w-96 lg:w-[460px] dark:[filter:invert(1)_hue-rotate(180deg)]"
-            />
-          </motion.div>
-        </motion.div>
+          <span aria-hidden="true" className="h-1.5 w-1.5 animate-pulse rounded-full bg-bush-400" />
+          Luxury coach hire · Gauteng
+        </motion.p>
 
-        <h1 className="mt-10 font-display font-bold tracking-tight">
+        <h1 className="mt-7 max-w-4xl font-display font-bold tracking-tight text-white">
           <SplitText
             as="span"
-            text="Travel made"
-            className="text-5xl leading-[1.05] sm:text-6xl lg:text-7xl"
-            delay={0.5}
-          />{" "}
+            text="Your journey. Our wheels."
+            className="block text-5xl leading-[1.02] sm:text-7xl lg:text-8xl"
+            delay={0.25}
+          />
           <SplitText
             as="span"
-            text="personal."
-            className="text-gradient text-5xl leading-[1.05] sm:text-6xl lg:text-7xl"
-            delay={0.75}
+            text="Travel made personal."
+            className="block bg-gradient-to-r from-sand-200 via-amber-300 to-bush-400 bg-clip-text text-5xl leading-[1.08] text-transparent sm:text-7xl lg:text-8xl"
+            delay={0.6}
           />
         </h1>
 
         <motion.p
           initial={reduced ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1 }}
-          className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
+          transition={{ duration: 0.7, delay: 0.95 }}
+          className="mt-7 max-w-xl text-lg leading-relaxed text-sand-100/85"
         >
-          Luxury coach hire from Gauteng to anywhere in Southern Africa.
-          Your journey. Our wheels. Let&rsquo;s go!
+          Safe, luxurious group travel from Gauteng to anywhere in Southern
+          Africa — church groups, school trips, tours and corporate events.
         </motion.p>
 
         <motion.div
           initial={reduced ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.15 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+          transition={{ duration: 0.7, delay: 1.1 }}
+          className="mt-10 flex flex-wrap items-center gap-4"
         >
           <Magnetic>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2.5 rounded-full bg-bush-600 px-8 py-4 font-semibold text-white shadow-lg shadow-bush-600/30 transition-colors hover:bg-bush-500 dark:bg-bush-400 dark:text-bush-950 dark:hover:bg-bush-300"
+              className="inline-flex items-center gap-2.5 rounded-full bg-bush-500 px-8 py-4 font-semibold text-white shadow-xl shadow-black/30 transition-colors hover:bg-bush-400"
             >
               Get a Quote
               <span aria-hidden="true">→</span>
@@ -111,7 +108,7 @@ export function Hero() {
           <Magnetic>
             <Link
               href="/fleet"
-              className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface/70 px-8 py-4 font-semibold backdrop-blur transition-colors hover:border-bush-400"
+              className="inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-md transition-colors hover:border-white/60 hover:bg-white/10"
             >
               View Our Fleet
             </Link>
@@ -121,14 +118,14 @@ export function Hero() {
         <motion.ul
           initial={reduced ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="mt-12 flex flex-wrap justify-center gap-3"
+          transition={{ duration: 0.8, delay: 1.35 }}
+          className="mt-14 flex flex-wrap gap-3"
           aria-label="Highlights"
         >
           {CHIPS.map((chip) => (
             <li
               key={chip}
-              className="rounded-full border border-border bg-surface/80 px-4 py-2 text-sm font-medium text-muted backdrop-blur"
+              className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-sand-100/90 backdrop-blur-md"
             >
               {chip}
             </li>
@@ -142,13 +139,13 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+        className="absolute bottom-8 right-8 z-10 hidden md:block"
       >
-        <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-muted/50 p-1.5">
+        <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white/40 p-1.5">
           <motion.div
             animate={reduced ? undefined : { y: [0, 12, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="h-2 w-1 rounded-full bg-muted"
+            className="h-2 w-1 rounded-full bg-white/70"
           />
         </div>
       </motion.div>

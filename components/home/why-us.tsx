@@ -84,8 +84,8 @@ export function WhyUs() {
             className="relative aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-[4/4.4]"
           >
             <Image
-              src="/images/hero-bus.jpeg"
-              alt="A Bush to Bay luxury coach at sunset, ready for departure"
+              src="/images/fleet-marcopolo30.jpg"
+              alt="Bush to Bay luxury coaches lined up and ready for departure"
               fill
               quality={85}
               sizes="(max-width: 1024px) 100vw, 50vw"
