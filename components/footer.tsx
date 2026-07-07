@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { CONTACT } from "@/lib/fleet";
+import { LogoMark } from "@/components/logo";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
-              <Image src="/images/logo.png" alt="" width={52} height={52} className="h-13 w-13 rounded-full object-contain" />
+              <LogoMark className="h-12 w-12" />
               <span className="font-display text-2xl font-bold">Bush to Bay</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-sand-200/80">

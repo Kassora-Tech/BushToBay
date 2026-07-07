@@ -81,11 +81,11 @@ export function WhyUs() {
             whileInView={{ clipPath: "inset(0 0% 0 0)" }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.1, ease: [0.77, 0, 0.175, 1] }}
-            className="relative aspect-[4/5] overflow-hidden rounded-3xl"
+            className="relative aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-[4/4.4]"
           >
             <Image
-              src="/images/hero-bus.jpeg"
-              alt="A Bush to Bay luxury coach ready for departure"
+              src="/images/fleet-marcopolo30.jpg"
+              alt="Bush to Bay luxury coaches lined up and ready for departure"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

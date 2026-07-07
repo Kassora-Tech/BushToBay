@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/contact/contact-form";
 import { SplitText } from "@/components/split-text";
 import { Reveal } from "@/components/reveal";
 import { CONTACT } from "@/lib/fleet";
+import { PhoneIcon, MailIcon, MapPinIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -16,21 +17,21 @@ const CHANNELS = [
     value: CONTACT.phone,
     href: CONTACT.phoneHref,
     detail: CONTACT.phone2,
-    icon: "📞",
+    icon: PhoneIcon,
   },
   {
     label: "Email us",
     value: CONTACT.email,
     href: CONTACT.emailHref,
     detail: "Best for detailed travel programs",
-    icon: "✉️",
+    icon: MailIcon,
   },
   {
     label: "Find us",
     value: "Gauteng, South Africa",
     href: undefined,
     detail: "Serving all of Southern Africa",
-    icon: "📍",
+    icon: MapPinIcon,
   },
 ];
 
@@ -64,8 +65,10 @@ export default function ContactPage() {
             {CHANNELS.map((channel, i) => (
               <Reveal key={channel.label} delay={i * 0.12}>
                 <div className="rounded-3xl border border-border bg-surface p-7">
-                  <span aria-hidden="true" className="text-3xl">{channel.icon}</span>
-                  <h2 className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                  <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-bush-600 to-bay-600 text-white shadow-md shadow-bush-900/15">
+                    <channel.icon />
+                  </span>
+                  <h2 className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
                     {channel.label}
                   </h2>
                   {channel.href ? (

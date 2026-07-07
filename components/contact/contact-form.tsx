@@ -4,6 +4,7 @@ import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FLEET } from "@/lib/fleet";
+import { CheckCircleIcon } from "@/components/icons";
 
 function FormInner() {
   const searchParams = useSearchParams();
@@ -30,8 +31,10 @@ function FormInner() {
             animate={{ opacity: 1, scale: 1 }}
             className="rounded-3xl border border-bush-300 bg-bush-50 p-10 text-center dark:border-bush-700 dark:bg-bush-900/40"
           >
-            <span aria-hidden="true" className="text-5xl">🚌</span>
-            <h2 className="mt-4 font-display text-2xl font-bold">Quote request received!</h2>
+            <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-bush-600 to-bay-600 text-white">
+              <CheckCircleIcon width={28} height={28} />
+            </span>
+            <h2 className="mt-5 font-display text-2xl font-bold">Quote request received!</h2>
             <p className="mt-3 text-muted">
               Thank you — our team will get back to you shortly with an
               obligation-free quote for your journey.
