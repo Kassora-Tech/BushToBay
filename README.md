@@ -24,4 +24,7 @@ npm run dev
 ## Notes
 
 - The contact form is demo-only for now; it will be wired to Supabase once the rebuild is approved.
-- Fleet imagery is sourced from the client's existing site.
+- Fleet imagery is sourced from the client's existing site and AI-upscaled 4x
+  (Real-ESRGAN) from the WhatsApp-compressed originals.
+- Testimonials on the homepage are demo placeholders — replace with the
+  client's real reviews before launch.

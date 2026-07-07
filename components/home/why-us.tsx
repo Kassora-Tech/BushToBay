@@ -87,6 +87,7 @@ export function WhyUs() {
               src="/images/fleet-marcopolo30.jpg"
               alt="Bush to Bay luxury coaches lined up and ready for departure"
               fill
+              quality={85}
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />

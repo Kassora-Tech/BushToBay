@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
@@ -20,6 +20,7 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bush-to-bay.vercel.app"),
   title: {
     default: "Bush to Bay | Luxury Coach Hire — Gauteng to Anywhere in Southern Africa",
     template: "%s | Bush to Bay Travel and Tours",
@@ -39,6 +40,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_ZA",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#faf8f3" },
+    { media: "(prefers-color-scheme: dark)", color: "#080f0b" },
+  ],
 };
 
 export default function RootLayout({

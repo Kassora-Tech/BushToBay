@@ -39,14 +39,16 @@ export function Hero() {
             alt=""
             fill
             priority
+            quality={90}
             sizes="100vw"
-            className="object-cover object-[70%_center]"
+            className="object-cover object-[70%_center] [filter:saturate(1.08)_contrast(1.05)]"
           />
         </motion.div>
-        {/* Legibility gradients */}
+        {/* Legibility gradients + cinematic vignette */}
         <div className="absolute inset-0 bg-gradient-to-r from-bush-950/90 via-bush-950/40 to-bush-950/10" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-bush-950/95 via-bush-950/35 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bush-950/60 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_25%,transparent_55%,rgb(11_33_22/0.5)_100%)]" />
       </motion.div>
 
       <motion.div

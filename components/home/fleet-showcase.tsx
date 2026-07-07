@@ -79,6 +79,7 @@ export function FleetShowcase() {
                 src={vehicle.image}
                 alt={`${vehicle.name} — ${vehicle.seats} seater`}
                 fill
+                quality={85}
                 sizes="(max-width: 768px) 100vw, 520px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority={i === 0}
