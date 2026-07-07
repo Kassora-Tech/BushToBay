@@ -43,7 +43,7 @@ export function WhyUs() {
       <div className="grid items-center gap-14 lg:grid-cols-2">
         <div>
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bay-400">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bush-400">
               Why Bush to Bay
             </p>
           </Reveal>
@@ -59,7 +59,7 @@ export function WhyUs() {
               <StaggerItem key={point.title} className="flex gap-5">
                 <span
                   aria-hidden="true"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-bush-500 to-bay-600 font-display text-sm font-bold text-white"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-bush-600 font-display text-sm font-bold text-white"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -84,8 +84,8 @@ export function WhyUs() {
             className="relative aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-[4/4.4]"
           >
             <Image
-              src="/images/fleet-marcopolo30.jpg"
-              alt="Bush to Bay luxury coaches lined up and ready for departure"
+              src="/images/hero-bus.jpeg"
+              alt="A Bush to Bay luxury coach at sunset, ready for departure"
               fill
               quality={85}
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -102,7 +102,7 @@ export function WhyUs() {
                 &ldquo;Whether you&rsquo;re headed to the bush, the coast, or anywhere in
                 between — we&rsquo;ll get you there.&rdquo;
               </blockquote>
-              <figcaption className="mt-3 text-xs font-bold uppercase tracking-widest text-bush-600 dark:text-bay-400">
+              <figcaption className="mt-3 text-xs font-bold uppercase tracking-widest text-bush-600 dark:text-bush-400">
                 — The Bush to Bay promise
               </figcaption>
             </figure>

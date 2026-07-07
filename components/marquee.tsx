@@ -32,7 +32,7 @@ export function Marquee({
             }`}
           >
             {item}
-            <span className={tone === "dark" ? "text-bay-400" : "text-bush-500"}>✦</span>
+            <span className={tone === "dark" ? "text-bush-400" : "text-bush-500"}>✦</span>
           </span>
         ))}
       </div>

@@ -21,7 +21,7 @@ export function Stats() {
         {STATS.map((stat, i) => (
           <Reveal key={stat.label} delay={i * 0.1} className="text-center">
             <p className="font-display text-5xl font-bold tracking-tight text-transparent sm:text-6xl">
-              <span className="bg-gradient-to-br from-sand-100 to-bay-300 bg-clip-text">
+              <span className="bg-gradient-to-br from-sand-100 to-amber-300 bg-clip-text">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </span>
             </p>

@@ -29,7 +29,7 @@ export function HowItWorks() {
     >
       <div className="mx-auto max-w-6xl px-5">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bay-400">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bush-400">
             How it works
           </p>
         </Reveal>
@@ -48,13 +48,13 @@ export function HowItWorks() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.4, ease: [0.65, 0, 0.35, 1] }}
-            className="absolute left-[8%] right-[8%] top-7 hidden h-px origin-left bg-gradient-to-r from-bush-500 via-bay-500 to-bush-500 md:block"
+            className="absolute left-[8%] right-[8%] top-7 hidden h-px origin-left bg-gradient-to-r from-bush-500 via-amber-400 to-bush-500 md:block"
           />
           <StaggerGroup className="grid gap-10 md:grid-cols-3 md:gap-8" stagger={0.18}>
             {STEPS.map((step, i) => (
               <StaggerItem key={step.title}>
                 <div className="relative">
-                  <span className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-bush-600 to-bay-600 font-display text-xl font-bold text-white shadow-lg shadow-bush-900/20">
+                  <span className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-amber-500 to-bush-600 font-display text-xl font-bold text-white shadow-lg shadow-bush-900/20">
                     {i + 1}
                   </span>
                   <h3 className="mt-6 font-display text-2xl font-bold tracking-tight">

@@ -17,7 +17,7 @@ export default function FleetPage() {
       <section className="gradient-mesh relative overflow-hidden px-5 pb-16 pt-40">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bay-400">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bush-400">
               Our fleet
             </p>
           </Reveal>

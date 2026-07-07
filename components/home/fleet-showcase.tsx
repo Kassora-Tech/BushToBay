@@ -53,7 +53,7 @@ export function FleetShowcase() {
     >
       <div className="mx-auto max-w-6xl px-5 md:pt-24">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bay-400">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bush-400">
             The fleet
           </p>
         </Reveal>
@@ -89,7 +89,7 @@ export function FleetShowcase() {
               </span>
             </div>
             <div className="p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bush-600 dark:text-bay-400">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bush-600 dark:text-bush-400">
                 {vehicle.tagline}
               </p>
               <h3 className="mt-2 font-display text-2xl font-bold tracking-tight">
@@ -111,7 +111,7 @@ export function FleetShowcase() {
             <p className="mt-3 text-muted">Every size of group, covered.</p>
             <Link
               href="/fleet"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-bush-700 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-bush-600 dark:bg-bay-500 dark:text-bay-950 dark:hover:bg-bay-400"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-bush-700 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-bush-600 dark:bg-bush-500 dark:text-bush-950 dark:hover:bg-bush-400"
             >
               Explore the full fleet <span aria-hidden="true">→</span>
             </Link>

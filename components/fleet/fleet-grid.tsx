@@ -44,7 +44,7 @@ export function FleetGrid() {
               </div>
 
               <div className="flex flex-1 flex-col p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bush-600 dark:text-bay-400">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bush-600 dark:text-bush-400">
                   {vehicle.tagline}
                 </p>
                 <h2 className="mt-2 font-display text-2xl font-bold tracking-tight">
@@ -74,7 +74,7 @@ export function FleetGrid() {
                   </p>
                   <Link
                     href={`/contact?vehicle=${vehicle.slug}`}
-                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-bush-600/40 px-5 py-3 text-sm font-semibold text-bush-700 transition-colors hover:bg-bush-700 hover:text-white dark:border-bay-500/40 dark:text-bay-300 dark:hover:bg-bay-500 dark:hover:text-bay-950"
+                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-bush-600/40 px-5 py-3 text-sm font-semibold text-bush-700 transition-colors hover:bg-bush-700 hover:text-white dark:border-bush-500/40 dark:text-bush-300 dark:hover:bg-bush-500 dark:hover:text-bush-950"
                   >
                     Book the {vehicle.seats}-seater <span aria-hidden="true">→</span>
                   </Link>

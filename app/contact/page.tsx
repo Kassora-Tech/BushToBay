@@ -41,7 +41,7 @@ export default function ContactPage() {
       <section className="gradient-mesh relative overflow-hidden px-5 pb-16 pt-40">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bay-400">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bush-400">
               Contact us
             </p>
           </Reveal>
@@ -65,7 +65,7 @@ export default function ContactPage() {
             {CHANNELS.map((channel, i) => (
               <Reveal key={channel.label} delay={i * 0.12}>
                 <div className="rounded-3xl border border-border bg-surface p-7">
-                  <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-bush-600 to-bay-600 text-white shadow-md shadow-bush-900/15">
+                  <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-amber-500 to-bush-600 text-white shadow-md shadow-bush-900/15">
                     <channel.icon />
                   </span>
                   <h2 className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   {channel.href ? (
                     <a
                       href={channel.href}
-                      className="mt-1.5 block font-display text-xl font-bold tracking-tight transition-colors hover:text-bush-600 dark:hover:text-bay-300"
+                      className="mt-1.5 block font-display text-xl font-bold tracking-tight transition-colors hover:text-bush-600 dark:hover:text-bush-300"
                     >
                       {channel.value}
                     </a>

@@ -15,7 +15,7 @@ export function CTA() {
       <div aria-hidden="true" className="gradient-mesh absolute inset-0" />
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-bush-500/20 to-bay-500/20 blur-3xl"
+        className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-bush-500/20 to-bush-500/20 blur-3xl"
       />
       <div className="relative mx-auto max-w-4xl px-5 text-center">
         <SplitText
@@ -35,7 +35,7 @@ export function CTA() {
             <Magnetic>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-bush-500 to-bay-500 px-9 py-4 font-semibold text-white shadow-xl shadow-bay-900/40 transition-transform hover:scale-[1.03]"
+                className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber-500 to-bush-600 px-9 py-4 font-semibold text-white shadow-xl shadow-bush-900/40 transition-transform hover:scale-[1.03]"
               >
                 Get in touch today <span aria-hidden="true">→</span>
               </Link>

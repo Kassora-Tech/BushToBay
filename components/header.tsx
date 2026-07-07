@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Magnetic } from "@/components/magnetic";
-import { LogoMark } from "@/components/logo";
 
 const LINKS = [
   { href: "/", label: "Home" },
@@ -28,10 +28,6 @@ export function Header() {
 
   useEffect(() => setOpen(false), [pathname]);
 
-  // The home hero is a dark photograph — while the header floats over it,
-  // switch to light-on-dark chrome.
-  const onDark = pathname === "/" && !scrolled && !open;
-
   return (
     <header className="fixed inset-x-0 top-0 z-[70]">
       <div
@@ -41,15 +37,15 @@ export function Header() {
             : "border-transparent bg-transparent"
         }`}
       >
-        <Link href="/" className="flex items-center gap-3" aria-label="Bush to Bay — home">
-          <LogoMark />
-          <span
-            className={`font-display text-lg font-bold leading-tight tracking-tight transition-colors ${
-              onDark ? "text-white" : "text-foreground"
-            }`}
-          >
-            Bush to Bay
-          </span>
+        <Link href="/" aria-label="Bush to Bay — home" className="flex items-center">
+          <Image
+            src="/images/logo-full.png"
+            alt="Bush to Bay — Travel and Tours"
+            width={851}
+            height={328}
+            priority
+            className="h-12 w-auto dark:[filter:invert(1)_hue-rotate(180deg)]"
+          />
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
@@ -61,21 +57,13 @@ export function Header() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  active
-                    ? onDark
-                      ? "text-white"
-                      : "text-bush-700 dark:text-bay-300"
-                    : onDark
-                      ? "text-sand-100/75 hover:text-white"
-                      : "text-muted hover:text-foreground"
+                  active ? "text-bush-700 dark:text-bush-300" : "text-muted hover:text-foreground"
                 }`}
               >
                 {active && (
                   <motion.span
                     layoutId="nav-pill"
-                    className={`absolute inset-0 rounded-full ${
-                      onDark ? "bg-white/15 backdrop-blur" : "bg-bush-100 dark:bg-bush-900/60"
-                    }`}
+                    className="absolute inset-0 rounded-full bg-bush-100 dark:bg-bush-900/60"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -86,15 +74,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <ThemeToggle onDark={onDark} />
+          <ThemeToggle />
           <Magnetic className="hidden md:block">
             <Link
               href="/contact"
-              className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
-                onDark
-                  ? "bg-white text-bush-900 hover:bg-sand-100"
-                  : "bg-bush-700 text-white hover:bg-bush-600 dark:bg-bay-500 dark:text-bay-950 dark:hover:bg-bay-400"
-              }`}
+              className="inline-flex items-center gap-2 rounded-full bg-bush-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-bush-500 dark:bg-bush-400 dark:text-bush-950 dark:hover:bg-bush-300"
             >
               Get a Quote
               <span aria-hidden="true">→</span>
@@ -106,9 +90,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors md:hidden ${
-              onDark ? "border-white/30 text-white" : "border-border text-foreground"
-            }`}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground md:hidden"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
               {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
@@ -140,7 +122,7 @@ export function Header() {
             ))}
             <Link
               href="/contact"
-              className="mt-2 block rounded-xl bg-bush-700 px-4 py-3 text-center font-semibold text-white dark:bg-bay-500 dark:text-bay-950"
+              className="mt-2 block rounded-xl bg-bush-600 px-4 py-3 text-center font-semibold text-white dark:bg-bush-400 dark:text-bush-950"
             >
               Get a Quote →
             </Link>

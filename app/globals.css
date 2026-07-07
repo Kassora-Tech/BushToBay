@@ -5,17 +5,17 @@
 :root {
   --background: 250 248 243; /* warm sand white */
   --surface: 255 255 255;
-  --foreground: 18 33 24; /* deep bush ink */
-  --muted: 96 108 100;
-  --border: 226 220 205;
+  --foreground: 41 25 12; /* warm espresso ink */
+  --muted: 113 99 87;
+  --border: 230 220 205;
 }
 
 .dark {
-  --background: 8 15 11; /* near-black green */
-  --surface: 15 26 19;
-  --foreground: 240 246 241;
-  --muted: 148 163 152;
-  --border: 34 51 40;
+  --background: 22 13 6; /* deep roasted brown */
+  --surface: 36 22 12;
+  --foreground: 248 243 237;
+  --muted: 172 155 140;
+  --border: 64 44 29;
 }
 
 html {
@@ -28,17 +28,17 @@ body {
 }
 
 ::selection {
-  @apply bg-bush-500/30;
+  @apply bg-bush-400/40;
 }
 
 /* ---- Focus visibility (WCAG 2.4.7) ---- */
 :focus-visible {
-  outline: 2px solid rgb(56 142 89);
+  outline: 2px solid rgb(194 65 12);
   outline-offset: 3px;
   border-radius: 2px;
 }
 .dark :focus-visible {
-  outline-color: rgb(44 201 255);
+  outline-color: rgb(251 146 60);
 }
 
 /* ---- Skip link ---- */
@@ -48,12 +48,12 @@ body {
 
 /* ---- Gradient text ---- */
 .text-gradient {
-  @apply bg-gradient-to-r from-bush-600 via-bay-600 to-bush-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-bush-600 via-amber-500 to-bush-600 bg-clip-text text-transparent;
   background-size: 200% auto;
   animation: gradient-x 6s linear infinite;
 }
 .dark .text-gradient {
-  @apply from-bush-300 via-bay-300 to-bush-300;
+  @apply from-bush-300 via-amber-300 to-bush-300;
 }
 
 /* ---- Noise / grain overlay ---- */
@@ -70,20 +70,20 @@ body {
   opacity: 0.07;
 }
 
-/* ---- Animated gradient mesh (hero fallback + backdrop) ---- */
+/* ---- Animated gradient mesh (sunset tones) ---- */
 .gradient-mesh {
   background:
-    radial-gradient(at 20% 25%, rgb(56 142 89 / 0.22) 0px, transparent 55%),
-    radial-gradient(at 80% 20%, rgb(0 177 241 / 0.16) 0px, transparent 55%),
-    radial-gradient(at 65% 80%, rgb(56 142 89 / 0.14) 0px, transparent 55%),
-    radial-gradient(at 15% 85%, rgb(0 142 207 / 0.14) 0px, transparent 50%);
+    radial-gradient(at 20% 25%, rgb(249 115 22 / 0.14) 0px, transparent 55%),
+    radial-gradient(at 80% 20%, rgb(251 191 36 / 0.16) 0px, transparent 55%),
+    radial-gradient(at 65% 80%, rgb(194 65 12 / 0.1) 0px, transparent 55%),
+    radial-gradient(at 15% 85%, rgb(0 142 207 / 0.07) 0px, transparent 50%);
 }
 .dark .gradient-mesh {
   background:
-    radial-gradient(at 20% 25%, rgb(56 142 89 / 0.3) 0px, transparent 55%),
-    radial-gradient(at 80% 20%, rgb(0 177 241 / 0.22) 0px, transparent 55%),
-    radial-gradient(at 65% 80%, rgb(39 114 69 / 0.25) 0px, transparent 55%),
-    radial-gradient(at 15% 85%, rgb(11 79 114 / 0.28) 0px, transparent 50%);
+    radial-gradient(at 20% 25%, rgb(249 115 22 / 0.22) 0px, transparent 55%),
+    radial-gradient(at 80% 20%, rgb(251 191 36 / 0.14) 0px, transparent 55%),
+    radial-gradient(at 65% 80%, rgb(154 52 18 / 0.28) 0px, transparent 55%),
+    radial-gradient(at 15% 85%, rgb(11 79 114 / 0.18) 0px, transparent 50%);
 }
 
 /* ---- Reduced motion (WCAG 2.3.3) ---- */

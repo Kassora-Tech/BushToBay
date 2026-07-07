@@ -12,7 +12,7 @@ function FormInner() {
   const [submitted, setSubmitted] = useState(false);
 
   const inputClass =
-    "w-full rounded-xl border border-border bg-surface px-4 py-3.5 text-foreground placeholder:text-muted/70 transition-colors focus:border-bush-500 dark:focus:border-bay-400";
+    "w-full rounded-xl border border-border bg-surface px-4 py-3.5 text-foreground placeholder:text-muted/70 transition-colors focus:border-bush-500 dark:focus:border-bush-400";
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ function FormInner() {
             animate={{ opacity: 1, scale: 1 }}
             className="rounded-3xl border border-bush-300 bg-bush-50 p-10 text-center dark:border-bush-700 dark:bg-bush-900/40"
           >
-            <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-bush-600 to-bay-600 text-white">
+            <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amber-500 to-bush-600 text-white">
               <CheckCircleIcon width={28} height={28} />
             </span>
             <h2 className="mt-5 font-display text-2xl font-bold">Quote request received!</h2>
@@ -42,7 +42,7 @@ function FormInner() {
             <button
               type="button"
               onClick={() => setSubmitted(false)}
-              className="mt-6 rounded-full border border-bush-500/50 px-6 py-2.5 text-sm font-semibold text-bush-700 dark:text-bay-300"
+              className="mt-6 rounded-full border border-bush-500/50 px-6 py-2.5 text-sm font-semibold text-bush-700 dark:text-bush-300"
             >
               Send another request
             </button>
@@ -57,7 +57,7 @@ function FormInner() {
           >
             <div>
               <label htmlFor="name" className="mb-1.5 block text-sm font-semibold">
-                Full name <span aria-hidden="true" className="text-bush-600 dark:text-bay-400">*</span>
+                Full name <span aria-hidden="true" className="text-bush-600 dark:text-bush-400">*</span>
               </label>
               <input id="name" name="name" type="text" required autoComplete="name" placeholder="Thabo Mokoena" className={inputClass} />
             </div>
@@ -69,7 +69,7 @@ function FormInner() {
             </div>
             <div>
               <label htmlFor="email" className="mb-1.5 block text-sm font-semibold">
-                Email address <span aria-hidden="true" className="text-bush-600 dark:text-bay-400">*</span>
+                Email address <span aria-hidden="true" className="text-bush-600 dark:text-bush-400">*</span>
               </label>
               <input id="email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" className={inputClass} />
             </div>
@@ -100,7 +100,7 @@ function FormInner() {
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="program" className="mb-1.5 block text-sm font-semibold">
-                Your travel program <span aria-hidden="true" className="text-bush-600 dark:text-bay-400">*</span>
+                Your travel program <span aria-hidden="true" className="text-bush-600 dark:text-bush-400">*</span>
               </label>
               <textarea
                 id="program"
@@ -114,7 +114,7 @@ function FormInner() {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="w-full rounded-full bg-bush-700 px-8 py-4 font-semibold text-white shadow-lg shadow-bush-700/25 transition-colors hover:bg-bush-600 dark:bg-bay-500 dark:text-bay-950 dark:hover:bg-bay-400"
+                className="w-full rounded-full bg-bush-700 px-8 py-4 font-semibold text-white shadow-lg shadow-bush-700/25 transition-colors hover:bg-bush-600 dark:bg-bush-500 dark:text-bush-950 dark:hover:bg-bush-400"
               >
                 Request my quote →
               </button>

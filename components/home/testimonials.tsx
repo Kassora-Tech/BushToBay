@@ -31,7 +31,7 @@ export function Testimonials() {
   return (
     <section aria-labelledby="testimonials-heading" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
       <Reveal>
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bay-400">
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-bush-600 dark:text-bush-400">
           Word of mouth
         </p>
       </Reveal>
@@ -48,7 +48,7 @@ export function Testimonials() {
             <TiltCard className="h-full" max={5}>
               <figure className="flex h-full flex-col justify-between rounded-3xl border border-border bg-surface p-8 transition-shadow duration-300 hover:shadow-xl hover:shadow-bush-900/10">
                 <div>
-                  <div aria-hidden="true" className="flex gap-1 text-bush-500 dark:text-bay-400">
+                  <div aria-hidden="true" className="flex gap-1 text-bush-500 dark:text-bush-400">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5-5.9-3.1-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9 2.9-6z" />

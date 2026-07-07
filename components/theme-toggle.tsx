@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
-export function ThemeToggle({ onDark = false }: { onDark?: boolean }) {
+export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -16,11 +16,7 @@ export function ThemeToggle({ onDark = false }: { onDark?: boolean }) {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
-      className={`relative flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur transition-colors ${
-        onDark
-          ? "border-white/30 bg-white/10 text-white hover:border-white/60"
-          : "border-border bg-surface/60 text-foreground hover:border-bush-400 dark:hover:border-bay-400"
-      }`}
+      className="relative flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface/60 text-foreground backdrop-blur transition-colors hover:border-bush-400"
     >
       {mounted && (
         <span aria-hidden="true" className="text-base">
