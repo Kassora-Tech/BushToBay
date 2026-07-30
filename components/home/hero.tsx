@@ -39,6 +39,7 @@ export function Hero() {
             alt=""
             fill
             priority
+            unoptimized
             quality={90}
             sizes="100vw"
             className="object-cover object-[70%_center] [filter:saturate(1.08)_contrast(1.05)]"
