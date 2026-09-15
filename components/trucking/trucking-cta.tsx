@@ -1,0 +1,69 @@
+"use client";
+
+import Link from "next/link";
+import { SplitText } from "@/components/split-text";
+import { Reveal } from "@/components/reveal";
+import { Magnetic } from "@/components/magnetic";
+import { CONTACT } from "@/lib/fleet";
+
+export function TruckingCTA() {
+  return (
+    <section
+      aria-labelledby="trucking-cta-heading"
+      className="relative overflow-hidden bg-bush-950 py-28 text-sand-50"
+    >
+      <div aria-hidden="true" className="gradient-mesh absolute inset-0" />
+      <div
+        aria-hidden="true"
+        className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-bush-500/20 to-bush-500/20 blur-3xl"
+      />
+      <div className="relative mx-auto max-w-4xl px-5 text-center">
+        <SplitText
+          as="h2"
+          text="Need Reliable Freight Transport?"
+          className="font-display text-4xl font-bold tracking-tight sm:text-6xl"
+        />
+        <span id="trucking-cta-heading" className="sr-only">
+          Get a freight transport quote
+        </span>
+        <Reveal delay={0.3}>
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-sand-200/80">
+            Whether you need general goods transported across South Africa or
+            cross-border into the SADC region, Bush To Bay can assist with
+            professional Tautliner trucking solutions.
+          </p>
+        </Reveal>
+        <Reveal delay={0.4}>
+          <p className="mx-auto mt-3 max-w-xl text-lg leading-relaxed text-sand-200/80">
+            Contact Bush To Bay today for a freight transportation quotation.
+          </p>
+        </Reveal>
+        <Reveal delay={0.55}>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Magnetic>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber-500 to-bush-600 px-9 py-4 font-semibold text-white shadow-xl shadow-bush-900/40 transition-transform hover:scale-[1.03]"
+              >
+                Request a freight quote <span aria-hidden="true">→</span>
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href={CONTACT.phoneHref}
+                className="inline-flex items-center gap-2.5 rounded-full border border-sand-100/25 px-9 py-4 font-semibold text-sand-100 backdrop-blur transition-colors hover:border-sand-100/60"
+              >
+                {CONTACT.phone}
+              </a>
+            </Magnetic>
+          </div>
+        </Reveal>
+        <Reveal delay={0.7}>
+          <p className="mt-10 font-display text-sm font-semibold uppercase tracking-[0.25em] text-bush-300">
+            Bush To Bay, Moving Your Business Forward.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

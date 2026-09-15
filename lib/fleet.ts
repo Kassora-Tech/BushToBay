@@ -118,5 +118,5 @@ export const CONTACT = {
   phone2Href: "tel:+27660189786",
   email: "sales@bushtobay.co.za",
   emailHref: "mailto:sales@bushtobay.co.za",
-  location: "Gauteng, South Africa",
+  location: "Corner Rooibok Road and Henley Drive, Highbury, 1964, Gauteng, South Africa",
 };

@@ -41,6 +41,7 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5 text-sm">
                 <li><Link href="/" className="text-sand-200/80 transition-colors hover:text-white">Home</Link></li>
                 <li><Link href="/fleet" className="text-sand-200/80 transition-colors hover:text-white">Our Fleet</Link></li>
+                <li><Link href="/trucking" className="text-sand-200/80 transition-colors hover:text-white">Trucking &amp; Freight</Link></li>
                 <li><Link href="/contact" className="text-sand-200/80 transition-colors hover:text-white">Contact Us</Link></li>
                 <li><Link href="/contact" className="text-sand-200/80 transition-colors hover:text-white">Get a Quote</Link></li>
               </ul>

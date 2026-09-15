@@ -28,7 +28,7 @@ const CHANNELS = [
   },
   {
     label: "Find us",
-    value: "Gauteng, South Africa",
+    value: CONTACT.location,
     href: undefined,
     detail: "Serving all of Southern Africa",
     icon: MapPinIcon,

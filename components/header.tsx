@@ -11,6 +11,7 @@ import { Magnetic } from "@/components/magnetic";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/fleet", label: "Our Fleet" },
+  { href: "/trucking", label: "Trucking" },
   { href: "/contact", label: "Contact" },
 ];
 

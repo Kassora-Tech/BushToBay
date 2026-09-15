@@ -96,3 +96,33 @@ export function CheckCircleIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function TruckIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M2 7h11v10H2z" />
+      <path d="M13 10h4l4 3.5V17h-8z" />
+      <circle cx="6.5" cy="18" r="1.8" />
+      <circle cx="16.5" cy="18" r="1.8" />
+    </svg>
+  );
+}
+
+export function GlobeIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z" />
+    </svg>
+  );
+}
+
+export function BoxIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <path d="m3.5 7.5 8.5-4 8.5 4-8.5 4-8.5-4Z" />
+      <path d="M3.5 7.5v9l8.5 4 8.5-4v-9" />
+      <path d="M12 11.5v9" />
+    </svg>
+  );
+}
