@@ -35,7 +35,7 @@ export function Hero() {
           className="absolute inset-0"
         >
           <Image
-            src="/images/hero-bus.jpeg"
+            src="/images/bushtobayhero.jpeg"
             alt=""
             fill
             priority
