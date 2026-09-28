@@ -41,6 +41,11 @@ export function FleetGrid() {
                 <span className="absolute left-4 top-4 z-10 rounded-full bg-bush-900/85 px-4 py-1.5 font-display text-sm font-bold text-sand-100 backdrop-blur">
                   {vehicle.seats} Seats
                 </span>
+                {vehicle.count > 1 && (
+                  <span className="absolute right-4 top-4 z-10 rounded-full bg-white/90 px-4 py-1.5 font-display text-sm font-bold text-bush-900 backdrop-blur">
+                    ×{vehicle.count} available
+                  </span>
+                )}
               </div>
 
               <div className="flex flex-1 flex-col p-7">

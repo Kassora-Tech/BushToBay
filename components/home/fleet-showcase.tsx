@@ -12,7 +12,7 @@ import { Reveal } from "@/components/reveal";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const SHOWCASE = [FLEET[0], FLEET[3], FLEET[5], FLEET[7], FLEET[8]];
+const SHOWCASE = [FLEET[0], FLEET[2], FLEET[3], FLEET[5], FLEET[6]];
 
 export function FleetShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -59,7 +59,7 @@ export function FleetShowcase() {
         </Reveal>
         <SplitText
           as="h2"
-          text="From 7 seats to 60. Pick your ride."
+          text="From 14 seats to 52. Pick your ride."
           className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl"
         />
         <span id="fleet-showcase-heading" className="sr-only">Fleet showcase</span>
@@ -106,7 +106,7 @@ export function FleetShowcase() {
         <div className="flex w-full shrink-0 items-center justify-center rounded-3xl border border-dashed border-bush-400/50 bg-bush-50/50 p-10 dark:bg-bush-900/20 md:w-[420px]">
           <div className="text-center">
             <p className="font-display text-3xl font-bold">
-              +4 more <span className="text-gradient">vehicles</span>
+              +{FLEET.length - SHOWCASE.length} more <span className="text-gradient">vehicles</span>
             </p>
             <p className="mt-3 text-muted">Every size of group, covered.</p>
             <Link

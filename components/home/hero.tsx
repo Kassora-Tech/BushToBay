@@ -7,7 +7,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { SplitText } from "@/components/split-text";
 import { Magnetic } from "@/components/magnetic";
 
-const CHIPS = ["9 vehicles", "7–60 seats", "Professional drivers"];
+const CHIPS = ["16 vehicles", "14–52 seats", "Professional drivers"];
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);

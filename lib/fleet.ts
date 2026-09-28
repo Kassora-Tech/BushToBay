@@ -2,6 +2,7 @@ export type Vehicle = {
   slug: string;
   name: string;
   seats: number;
+  count: number;
   tagline: string;
   description: string;
   image: string;
@@ -11,20 +12,10 @@ export type Vehicle = {
 
 export const FLEET: Vehicle[] = [
   {
-    slug: "hyundai-h1",
-    name: "Hyundai H1",
-    seats: 7,
-    tagline: "Executive shuttle",
-    description:
-      "Perfect for airport transfers, VIPs and small private groups. Discreet, comfortable and always on time.",
-    image: "/images/fleet-h1.jpg",
-    features: ["Air conditioning", "Leather comfort seats", "Luggage space", "Professional driver"],
-    bestFor: ["Airport transfers", "VIP travel", "Small groups"],
-  },
-  {
-    slug: "quantum-classic",
-    name: "Toyota Quantum — Classic",
+    slug: "quantum-old",
+    name: "Toyota Quantum — Old Shape",
     seats: 14,
+    count: 2,
     tagline: "The dependable workhorse",
     description:
       "A practical, budget-friendly option for community and school trips without compromising on safety.",
@@ -36,6 +27,7 @@ export const FLEET: Vehicle[] = [
     slug: "quantum-new",
     name: "Toyota Quantum — New Shape",
     seats: 14,
+    count: 2,
     tagline: "Sleek and modern",
     description:
       "Sleek, modern and comfortable for short or regional travel. The smart choice for smaller groups on the move.",
@@ -44,9 +36,10 @@ export const FLEET: Vehicle[] = [
     bestFor: ["Regional travel", "Day trips", "Team outings"],
   },
   {
-    slug: "sprinter-21",
+    slug: "sprinter-18",
     name: "Mercedes-Benz Sprinter",
-    seats: 21,
+    seats: 18,
+    count: 2,
     tagline: "Premium mid-size comfort",
     description:
       "Ideal for professional, church or tour groups looking for added comfort and a touch of class.",
@@ -55,9 +48,10 @@ export const FLEET: Vehicle[] = [
     bestFor: ["Corporate groups", "Church groups", "Tour parties"],
   },
   {
-    slug: "coaster-23",
-    name: "Toyota Coaster",
-    seats: 23,
+    slug: "coaster-gl",
+    name: "Toyota Coaster 2.8 GL",
+    seats: 22,
+    count: 2,
     tagline: "Spacious and reliable",
     description:
       "Spacious and reliable for medium-sized groups and excursions — a proven favourite across Southern Africa.",
@@ -66,9 +60,10 @@ export const FLEET: Vehicle[] = [
     bestFor: ["Excursions", "Medium groups", "Sports teams"],
   },
   {
-    slug: "marcopolo-30",
-    name: "Luxury Marcopolo",
+    slug: "marcopolo-g6",
+    name: "Marcopolo G6",
     seats: 30,
+    count: 1,
     tagline: "Long-distance luxury",
     description:
       "Premium coach with reclining seats — designed for long-distance comfort from the bush to the bay.",
@@ -77,37 +72,28 @@ export const FLEET: Vehicle[] = [
     bestFor: ["Long distance", "Tour groups", "Cross-border trips"],
   },
   {
-    slug: "hyundai-41",
-    name: "Hyundai Bus",
+    slug: "hyundai-universe",
+    name: "Hyundai Universe",
     seats: 41,
+    count: 5,
     tagline: "The big-group specialist",
     description:
-      "A dependable workhorse for school groups, events or large family trips — space for everyone and everything.",
+      "Our largest fleet of luxury coaches, seating 39 to 41 — a dependable workhorse for school groups, events or large family trips.",
     image: "/images/fleet-hyundai41.jpeg",
-    features: ["41 full seats", "Air conditioning", "Large luggage bays", "PA system"],
+    features: ["39/41 full seats", "Air conditioning", "Large luggage bays", "PA system"],
     bestFor: ["School groups", "Events", "Family gatherings"],
   },
   {
     slug: "marcopolo-g7",
     name: "Marcopolo G7",
     seats: 52,
+    count: 1,
     tagline: "Top of the line",
     description:
       "Top-of-the-line luxury with reclining seats, air-con and charging ports. Touring, the way it should be.",
     image: "/images/fleet-marcopolo52.jpeg",
     features: ["Full recline seats", "Climate control", "Charging ports", "On-board PA"],
     bestFor: ["Luxury touring", "Corporate events", "Long-haul travel"],
-  },
-  {
-    slug: "bus-60",
-    name: "60-Seater Coach",
-    seats: 60,
-    tagline: "Maximum capacity",
-    description:
-      "Perfect for maximum capacity — rallies, large school trips and mega group bookings at unbeatable value.",
-    image: "/images/fleet-bus60.jpeg",
-    features: ["60 seats", "Air conditioning", "PA system", "Seat belts throughout"],
-    bestFor: ["Rallies", "Mega bookings", "Large school trips"],
   },
 ];
 

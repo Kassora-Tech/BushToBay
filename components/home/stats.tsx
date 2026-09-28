@@ -4,8 +4,8 @@ import { Counter } from "@/components/counter";
 import { Reveal } from "@/components/reveal";
 
 const STATS = [
-  { value: 9, suffix: "", label: "Vehicles in our fleet" },
-  { value: 60, suffix: "", label: "Seats on our biggest coach" },
+  { value: 16, suffix: "", label: "Vehicles in our fleet" },
+  { value: 52, suffix: "", label: "Seats on our biggest coach" },
   { value: 100, suffix: "%", label: "Professional, vetted drivers" },
   { value: 1000, suffix: "s", label: "Of kilometres, safely driven" },
 ];

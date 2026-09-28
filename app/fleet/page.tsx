@@ -8,7 +8,7 @@ import { CTA } from "@/components/home/cta";
 export const metadata: Metadata = {
   title: "Our Fleet",
   description:
-    "Nine vehicles, from a 7-seater Hyundai H1 to a 60-seater coach. Air conditioning, reclining seats, PA systems and charging ports — every group size covered.",
+    "16 vehicles, from a 14-seater Toyota Quantum to a 52-seater Marcopolo G7 luxury coach. Air conditioning, reclining seats, PA systems and charging ports — every group size covered.",
 };
 
 export default function FleetPage() {
@@ -23,14 +23,14 @@ export default function FleetPage() {
           </Reveal>
           <SplitText
             as="h1"
-            text="Nine vehicles. Zero compromises."
+            text="16 vehicles. Zero compromises."
             className="mt-3 max-w-3xl font-display text-5xl font-bold tracking-tight sm:text-6xl"
           />
           <Reveal delay={0.4}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
               Every vehicle is air-conditioned, seat-belted and driven by a
-              professional. From executive shuttles to 60-seat coaches — pick the
-              size, we&rsquo;ll handle the journey.
+              professional. From nimble Quantum shuttles to 52-seat luxury
+              coaches — pick the size, we&rsquo;ll handle the journey.
             </p>
           </Reveal>
         </div>
