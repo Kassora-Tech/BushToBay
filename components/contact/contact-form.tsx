@@ -10,15 +10,38 @@ function FormInner() {
   const searchParams = useSearchParams();
   const preselected = searchParams.get("vehicle") ?? "";
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const inputClass =
     "w-full rounded-xl border border-border bg-surface px-4 py-3.5 text-foreground placeholder:text-muted/70 transition-colors focus:border-bush-500 dark:focus:border-bush-400";
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Demo build — form submissions will be wired to the booking backend
-    // (Supabase) once approved.
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Something went wrong.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -112,11 +135,17 @@ function FormInner() {
               />
             </div>
             <div className="sm:col-span-2">
+              {error && (
+                <p className="mb-3 text-center text-sm text-red-600 dark:text-red-400">
+                  {error}
+                </p>
+              )}
               <button
                 type="submit"
-                className="w-full rounded-full bg-bush-700 px-8 py-4 font-semibold text-white shadow-lg shadow-bush-700/25 transition-colors hover:bg-bush-600 dark:bg-bush-500 dark:text-bush-950 dark:hover:bg-bush-400"
+                disabled={submitting}
+                className="w-full rounded-full bg-bush-700 px-8 py-4 font-semibold text-white shadow-lg shadow-bush-700/25 transition-colors hover:bg-bush-600 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-bush-500 dark:text-bush-950 dark:hover:bg-bush-400"
               >
-                Request my quote →
+                {submitting ? "Sending…" : "Request my quote →"}
               </button>
               <p className="mt-3 text-center text-xs text-muted">
                 For accurate quotations, please share detailed information about
