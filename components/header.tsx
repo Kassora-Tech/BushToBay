@@ -12,6 +12,7 @@ const LINKS = [
   { href: "/", label: "Home" },
   { href: "/fleet", label: "Our Fleet" },
   { href: "/trucking", label: "Trucking" },
+  { href: "/social", label: "Social" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -65,7 +66,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={active ? "page" : undefined}
-                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium transition-colors lg:px-4 ${
                   active
                     ? onDark
                       ? "text-white"
@@ -95,7 +96,7 @@ export function Header() {
           <Magnetic className="hidden md:block">
             <Link
               href="/contact"
-              className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+              className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-semibold transition-colors lg:px-5 ${
                 onDark
                   ? "bg-white text-bush-900 hover:bg-sand-100"
                   : "bg-bush-600 text-white hover:bg-bush-500 dark:bg-bush-400 dark:text-bush-950 dark:hover:bg-bush-300"

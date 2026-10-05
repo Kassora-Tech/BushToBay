@@ -106,3 +106,9 @@ export const CONTACT = {
   emailHref: "mailto:sales@bushtobay.co.za",
   location: "Corner Rooibok Road and Henley Drive, Highbury, 1964, Gauteng, South Africa",
 };
+
+export const SOCIAL = {
+  instagram: "https://instagram.com/bushtobaytravel",
+  instagramHandle: "@bushtobaytravel",
+  facebook: "https://facebook.com/bushtobaytravel",
+};

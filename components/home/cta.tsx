@@ -6,7 +6,11 @@ import { Reveal } from "@/components/reveal";
 import { Magnetic } from "@/components/magnetic";
 import { CONTACT } from "@/lib/fleet";
 
-export function CTA() {
+export function CTA({
+  heading = "Ready when you are. Let's go!",
+}: {
+  heading?: string;
+}) {
   return (
     <section
       aria-labelledby="cta-heading"
@@ -20,7 +24,7 @@ export function CTA() {
       <div className="relative mx-auto max-w-4xl px-5 text-center">
         <SplitText
           as="h2"
-          text="Ready when you are. Let's go!"
+          text={heading}
           className="font-display text-4xl font-bold tracking-tight sm:text-6xl"
         />
         <span id="cta-heading" className="sr-only">Get in touch</span>

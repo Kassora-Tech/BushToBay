@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CONTACT } from "@/lib/fleet";
+import { CONTACT, SOCIAL } from "@/lib/fleet";
+import { InstagramIcon, FacebookIcon } from "@/components/icons";
 
 export function Footer() {
   return (
@@ -32,6 +33,30 @@ export function Footer() {
                 Travel made personal. Luxury coach hire from Gauteng to anywhere
                 in Southern Africa. Your journey. Our wheels. Let&rsquo;s go!
               </p>
+              <ul className="mt-6 flex gap-3" aria-label="Follow us">
+                <li>
+                  <a
+                    href={SOCIAL.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Bush to Bay on Instagram (opens in a new tab)"
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-sand-200/80 transition-colors hover:border-bush-300 hover:text-white focus-visible:rounded-full"
+                  >
+                    <InstagramIcon width={18} height={18} />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={SOCIAL.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Bush to Bay on Facebook (opens in a new tab)"
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-sand-200/80 transition-colors hover:border-bush-300 hover:text-white focus-visible:rounded-full"
+                  >
+                    <FacebookIcon width={18} height={18} />
+                  </a>
+                </li>
+              </ul>
             </div>
 
             <nav aria-label="Footer navigation">
@@ -42,6 +67,7 @@ export function Footer() {
                 <li><Link href="/" className="text-sand-200/80 transition-colors hover:text-white">Home</Link></li>
                 <li><Link href="/fleet" className="text-sand-200/80 transition-colors hover:text-white">Our Fleet</Link></li>
                 <li><Link href="/trucking" className="text-sand-200/80 transition-colors hover:text-white">Trucking &amp; Freight</Link></li>
+                <li><Link href="/social" className="text-sand-200/80 transition-colors hover:text-white">Social</Link></li>
                 <li><Link href="/contact" className="text-sand-200/80 transition-colors hover:text-white">Contact Us</Link></li>
                 <li><Link href="/contact" className="text-sand-200/80 transition-colors hover:text-white">Get a Quote</Link></li>
               </ul>
