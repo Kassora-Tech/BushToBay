@@ -20,7 +20,7 @@ const IG_MEDIA_FIELDS =
   "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,like_count,comments_count,children{media_type,media_url,thumbnail_url}";
 const FB_PROFILE_FIELDS = "name,about,followers_count,fan_count,picture.type(large){url},link";
 const FB_POST_FIELDS =
-  "id,message,created_time,permalink_url,full_picture,attachments{media_type,type,media,url,title,subattachments{media,type}},reactions.summary(true).limit(0),comments.summary(true).limit(0)";
+  "id,message,created_time,permalink_url,full_picture,attachments{media_type,type,media,url,title,subattachments{media,type}}";
 
 // ---- Graph API response shapes (only the fields we request) ----
 
@@ -84,8 +84,6 @@ type FbPost = {
   permalink_url?: string;
   full_picture?: string;
   attachments?: { data?: FbAttachment[] };
-  reactions?: { summary?: { total_count?: number } };
-  comments?: { summary?: { total_count?: number } };
 };
 
 // ---- Fetching ----
@@ -228,8 +226,6 @@ function normaliseFacebook(item: FbPost): SocialPost | null {
     carouselItems: type === "carousel" ? carouselItems : [],
     permalink: item.permalink_url,
     timestamp: toIso(item.created_time),
-    likes: item.reactions?.summary?.total_count,
-    comments: item.comments?.summary?.total_count,
     linkUrl: type === "link" ? attachment?.url : undefined,
     linkTitle: type === "link" ? attachment?.title : undefined,
   };
