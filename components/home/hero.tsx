@@ -25,7 +25,6 @@ export function Hero() {
       {/* Cinematic photo layer with slow parallax + settle-in zoom */}
       <motion.div
         style={reduced ? undefined : { y: yImage }}
-        aria-hidden="true"
         className="absolute inset-0"
       >
         <motion.div
@@ -34,27 +33,42 @@ export function Hero() {
           transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
           className="absolute inset-0"
         >
-          <Image
-            src="/images/bushtobayhero.jpeg"
-            alt=""
-            fill
-            priority
-            unoptimized
-            quality={90}
-            sizes="100vw"
-            className="object-cover object-[70%_center] [filter:saturate(1.08)_contrast(1.05)]"
-          />
+          {/* Portrait crop below md; eager + fetchPriority instead of `priority`
+              so the desktop JPEG isn't preloaded on phones */}
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcSet="/images/hero-mobile.webp"
+              type="image/webp"
+            />
+            <Image
+              src="/images/bushtobayhero.jpeg"
+              alt="Bush to Bay luxury coach with Table Mountain at sunset"
+              fill
+              loading="eager"
+              fetchPriority="high"
+              unoptimized
+              quality={90}
+              sizes="100vw"
+              className="object-cover object-bottom md:object-[70%_center] [filter:saturate(1.08)_contrast(1.05)]"
+            />
+          </picture>
         </motion.div>
+        {/* Mobile legibility overlay over the bright sky and white bus */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,.6)_0%,rgba(0,0,0,.25)_45%,rgba(0,0,0,.65)_100%)] md:hidden"
+        />
         {/* Legibility gradients + cinematic vignette */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bush-950/90 via-bush-950/40 to-bush-950/10" />
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-bush-950/95 via-bush-950/35 to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bush-950/60 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_25%,transparent_55%,rgb(51_17_7/0.5)_100%)]" />
+        <div aria-hidden="true" className="absolute inset-0 hidden bg-gradient-to-r from-bush-950/90 via-bush-950/40 to-bush-950/10 md:block" />
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 hidden h-2/3 bg-gradient-to-t from-bush-950/95 via-bush-950/35 to-transparent md:block" />
+        <div aria-hidden="true" className="absolute inset-x-0 top-0 hidden h-40 bg-gradient-to-b from-bush-950/60 to-transparent md:block" />
+        <div aria-hidden="true" className="absolute inset-0 hidden bg-[radial-gradient(120%_90%_at_50%_25%,transparent_55%,rgb(51_17_7/0.5)_100%)] md:block" />
       </motion.div>
 
       <motion.div
         style={reduced ? undefined : { y: yContent, opacity }}
-        className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24 pt-40"
+        className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-12 pt-28 md:pb-24 md:pt-40"
       >
         <motion.p
           initial={reduced ? false : { opacity: 0, y: 16 }}
@@ -95,12 +109,12 @@ export function Hero() {
           initial={reduced ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.1 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          className="mt-10 flex flex-wrap items-center gap-3 md:gap-4"
         >
           <Magnetic>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2.5 rounded-full bg-bush-500 px-8 py-4 font-semibold text-white shadow-xl shadow-black/30 transition-colors hover:bg-bush-400"
+              className="inline-flex items-center gap-2.5 rounded-full bg-bush-500 px-5 py-4 md:px-8 font-semibold text-white shadow-xl shadow-black/30 transition-colors hover:bg-bush-400"
             >
               Get a Quote
               <span aria-hidden="true">→</span>
@@ -109,7 +123,7 @@ export function Hero() {
           <Magnetic>
             <Link
               href="/fleet"
-              className="inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-md transition-colors hover:border-white/60 hover:bg-white/10"
+              className="inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 px-5 py-4 md:px-8 font-semibold text-white backdrop-blur-md transition-colors hover:border-white/60 hover:bg-white/10"
             >
               View Our Fleet
             </Link>
@@ -120,7 +134,7 @@ export function Hero() {
           initial={reduced ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.35 }}
-          className="mt-14 flex flex-wrap gap-3"
+          className="mt-8 flex flex-wrap gap-3 md:mt-14"
           aria-label="Highlights"
         >
           {CHIPS.map((chip) => (
