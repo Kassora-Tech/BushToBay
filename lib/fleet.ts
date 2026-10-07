@@ -100,8 +100,6 @@ export const FLEET: Vehicle[] = [
 export const CONTACT = {
   phone: "+27 83 898 2914",
   phoneHref: "tel:+27838982914",
-  phone2: "+27 66 018 9786",
-  phone2Href: "tel:+27660189786",
   email: "sales@bushtobay.co.za",
   emailHref: "mailto:sales@bushtobay.co.za",
   location: "Corner Rooibok Road and Henley Drive, Highbury, 1964, Gauteng, South Africa",

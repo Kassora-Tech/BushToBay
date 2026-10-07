@@ -16,7 +16,7 @@ const CHANNELS = [
     label: "Call us",
     value: CONTACT.phone,
     href: CONTACT.phoneHref,
-    detail: CONTACT.phone2,
+    detail: undefined,
     icon: PhoneIcon,
   },
   {
@@ -83,7 +83,9 @@ export default function ContactPage() {
                       {channel.value}
                     </p>
                   )}
-                  <p className="mt-1 text-sm text-muted">{channel.detail}</p>
+                  {channel.detail && (
+                    <p className="mt-1 text-sm text-muted">{channel.detail}</p>
+                  )}
                 </div>
               </Reveal>
             ))}

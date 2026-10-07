@@ -84,11 +84,6 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href={CONTACT.phone2Href} className="text-sand-200/80 transition-colors hover:text-white">
-                    {CONTACT.phone2}
-                  </a>
-                </li>
-                <li>
                   <a href={CONTACT.emailHref} className="text-sand-200/80 transition-colors hover:text-white">
                     {CONTACT.email}
                   </a>
